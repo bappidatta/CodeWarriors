@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Warriors</title>
+    <link href="Contents/css/bootstrap.min.css" rel="stylesheet" />
+	<!--<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>-->
+    <link href="Contents/css/loading-bar.min.css" rel="stylesheet" />
+	<link href="Contents/css/angular-tagger.css" rel="stylesheet" />
+    <link href="Contents/css/toaster.css" rel="stylesheet" />
+    <link href="Contents/css/style.css" rel="stylesheet" />
+</head>
+<body ng-app="codeWarriors">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bit Book</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a ng-show="isAuthenticate" href="#/posts">Post</a></li>
+                <li><a ng-show="isAuthenticate" href="#/friends">Friends</a></li>
+                <li><a ng-show="isAuthenticate" href="#/friend-requests">Friend Request <span ng-show="friendRequest > 0" class="friend-request-notify">{{ friendRequest }}</span></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" ng-controller="LoginCtrl">
+                <li><a ng-hide="isAuthenticate" href="#/signup" >Sign Up</a></li>
+                <li><a ng-hide="isAuthenticate" href="#/login">Login</a></li>
+                <li><a ng-show="isAuthenticate" href="">{{ userName }}</a></li>
+                <li><a ng-show="isAuthenticate" href="" ng-click="logout()">Logout</a></li>
+                <li ng-show="isAuthenticate">
+                    <form class="navbar-form" ng-controller="UserSearchCtrl" ng-submit="searchUser()">
+                        <input class="form-control search-control col-lg-8" placeholder="Search User" type="text" ng-model="searchByName" />
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div ng-view></div>
+        <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+    </div>
+	<footer>
+		
+	</footer>
+    <script src="Scripts/Vendors/jquery-1.11.1.min.js"></script>
+    <script src="../Scripts/jquery.signalR-2.0.3.min.js"></script>
+    <script src="Scripts/Vendors/angular.min.js"></script>
+    <script src="Scripts/Vendors/angular-animate.min.js"></script>
+    <script src="Scripts/Vendors/angular-resource.min.js"></script>
+    <script src="Scripts/Vendors/angular-route.min.js"></script>
+    <script src="Scripts/Vendors/angular-cookies.min.js"></script>
+    <script src="Scripts/Vendors/signalr-hub.min.js"></script>
+    <script src="Scripts/Vendors/toaster.js"></script>
+    <script src="Scripts/Vendors/ui-bootstrap-tpls-0.11.0.min.js"></script>
+    <script src="Scripts/Vendors/loading-bar.min.js"></script>
+    <script src="Scripts/Vendors/moment.min.js"></script>
+    <script src="Scripts/Vendors/angular-moment.min.js"></script>
+    <script src="Scripts/Vendors/textAngular-sanitize.min.js"></script>
+    <script src="Scripts/Vendors/textAngular.min.js"></script>
+    <script src="Scripts/Vendors/angular-tagger.min.js"></script>
+	
+    <script src="Scripts/Services/user-service.js"></script>
+    <script src="Scripts/Services/post-service.js"></script>
+    <script src="Scripts/Services/auth-service.js"></script>
+    <script src="Scripts/Services/signalr-service.js"></script>
+	
+	<script src="Scripts/Directives/user-validations.js"></script>
+	
+    <script src="Scripts/Controllers/user-controller.js"></script>
+    <script src="Scripts/Controllers/post-controller.js"></script>
+    <script src="Scripts/Controllers/signup-controller.js"></script>
+    <script src="Scripts/Controllers/auth-controller.js"></script>
+	
+	<script src="Scripts/app.js"></script>
+</body>
+</html>

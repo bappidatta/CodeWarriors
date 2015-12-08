@@ -1,0 +1,9 @@
+<h4 class="page-header">Friend Request List</h4>
+<p ng-hide="friendRequest.list">You Have No Friend Request</p>
+<div class="col-md-12">
+    <div class="well well-sm" ng-repeat="item in friendRequest.list">
+        <a href="">{{ item.FirstName }} {{ item.LastName }}</a>
+        <button class="btn btn-sm" ng-click="acceptFriendRequest(item.UserId, item.FriendId, $index)">Accept</button>
+        <button class="btn btn-sm" ng-click="rejectFriendRequest(item.UserId, item.FriendId, $index)">Reject</button>
+    </div>
+</div>

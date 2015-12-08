@@ -1,0 +1,31 @@
+<h4 class="page-header">All Questions</h4>
+<p ng-hide="question.list">Sorry, There are no questions</p>
+<div class="post col-md-12" ng-repeat="item in question.list | filter: query">
+    <div class="col-md-2">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-12 count sm-padding">{{ item.UpVote - item.DownVote }}</div>
+                    <div class="col-md-12 count-text no-padding">Votes</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-12 count sm-padding">{{ item.NoOfAnswer }}</div>
+                    <div class="col-md-12 count-text no-padding">Answer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10 no-padding">
+        <div class="col-md-12"><a class="question-title" href="#/question/{{ item.Id }}">{{ item.QuestionTitle }}</a></div>
+        <div class="col-md-9">
+            <a ng-repeat="tag in item.Tags" href="#/questions/tagged/{{tag}}" class="tag">{{ tag }}</a>
+        </div>
+        <div class="col-md-3 ask-time">
+            <div class="col-md-12">asked <span am-time-ago="item.CreatedTime"></span></div>
+            <div class="col-md-12">asked by <a href="">{{ item.UserName }}</a></div>
+        </div>
+    </div>
+</div>
+<ul class="pagination pagination-sm">
+    <li ng-repeat="page in pageList"><a href="#/questions/?pageSize={{pageSize}}&offset={{page.pageNo}}">{{ page.pageNo }}</a></li>
+</ul>

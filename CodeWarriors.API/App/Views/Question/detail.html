@@ -1,0 +1,54 @@
+<h4 class="page-header">{{ questionAnswer.QuestionTitle }}</h4>
+<div class="col-md-12">
+    <div class="col-md-1">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12 count-text"><button class="glyphicon glyphicon-chevron-up btn btn-sm btn-block btn-default" ng-click=""></button></div>
+                    <div class="col-md-12 count">{{ questionAnswer.UpVote - questionAnswer.DownVote }}</div>
+                    <div class="col-md-12 count-text"><button class="glyphicon glyphicon-chevron-down btn btn-sm btn-block btn-default" ng-click=""></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-11 no-padding">
+        <div class="col-md-12" ng-bind-html="questionAnswer.Details"></div>
+        <div class="col-md-9">
+            <a ng-repeat="tag in questionAnswer.Tags" href="#/questions/tagged/{{tag}}" class="tag">{{ tag }}</a>
+        </div>
+        <div class="col-md-3 ask-time">
+            <div class="col-md-12">asked <span am-time-ago="questionAnswer.CreatedTime"></span></div>
+            <div class="col-md-12">asked by <a href="">{{ questionAnswer.UserName }}</a></div>
+        </div>
+    </div>
+</div>
+<h4 class="page-header">Answers</h4>
+<div class="post col-md-12" ng-repeat="answer in questionAnswer.Answers">
+    <div class="col-md-1">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12 count-text"><button class="glyphicon glyphicon-chevron-up btn btn-sm btn-block btn-default" ng-click=""></button></div>
+                    <div class="col-md-12 count">{{answer.UpVote - answer.DownVote}}</div>
+                    <div class="col-md-12 count-text"><button class="glyphicon glyphicon-chevron-down btn btn-sm btn-block btn-default" ng-click=""></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-11 no-padding">
+        <div class="col-md-12" ng-bind-html="answer.Details"></div>
+        <div class="col-md-9"></div>
+        <div class="col-md-3 ask-time">
+            <div class="col-md-12">answered <span am-time-ago="answer.CreatedTime"></span></div>
+            <div class="col-md-12">answered by <a href="">{{ answer.UserName }}</a></div>
+        </div>
+    </div>
+</div>
+<h4>Your Answer</h4>
+<form name="answerForm" ng-controller="PostAnswerCtrl" ng-submit="postAnswer()" novalidate>
+    <div class="form-group">
+        <div name="description" text-angular ng-model="answerModel.Description" required></div>
+        <span class="span-invalid" ng-show="answerForm.description.$error.required && answerForm.description.$dirty">Description is required</span>
+    </div>
+    <input type="submit" class="btn btn-primary btn-sm" value="Post Answer" ng-disabled="!answerForm.$valid" />
+</form>

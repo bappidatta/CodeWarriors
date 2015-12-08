@@ -1,0 +1,8 @@
+<h4 class="page-header">Friend List</h4>
+<p ng-hide="friend.list">Sorry, You Have No Friend</p>
+<div class="col-md-12">
+    <div class="well well-sm" ng-repeat="item in friend.list">
+        <a href="">{{ item.FirstName }} {{ item.LastName }}</a>
+        <button class="btn btn-sm" ng-click="removeFriend(item.UserId, item.FriendId, $index)">Remove</button>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+[
+	{
+		"id": 1,
+		"TagName": "Java",
+		"TagDetails": "Java (not to be confused with JavaScript) is a class-based, object-oriented, strongly typed, reflective language and runtime "
+	},
+	{
+		"id": 2,
+		"TagName": "C#",
+		"TagDetails": "a multi-paradigm programming language encompassing strong typing, imperative, declarative, functional, generic, object-"
+	},
+	{
+		"id": 3,
+		"TagName": "JavaScript",
+		"TagDetails": "JavaScript (not to be confused with Java) is a dynamically-typed language commonly used for client-side scripting."
+	},
+	{
+		"id": 4,
+		"TagName": "PHP",
+		"TagDetails": "a general-purpose scripting language widely used in web development. Use this tag for questions involving PHP usage."
+	},
+	{
+		"id": 5,
+		"TagName": "android",
+		"TagDetails": "Google's OS for mobile devices. Please use Android-specific tags such as [android-intent], not [intent]"
+	},
+	{
+		"id": 6,
+		"TagName": "Jquery",
+		"TagDetails": "a popular cross-browser JavaScript library that facilitates DOM traversal, event handling, animation and AJAX interactions"
+	},
+	{
+		"id": 7,
+		"TagName": "Python",
+		"TagDetails": "a dynamic and strongly typed programming language that is designed to emphasize usability."
+	},
+	{
+		"id": 8,
+		"TagName": "C++",
+		"TagDetails": "a general-purpose programming language based on C. Use this tag for questions involving C++ usage"
+	},
+	{
+		"id": 9,
+		"TagName": "Html",
+		"TagDetails": "the principal markup language used for structuring web pages and formatting content. The most recent revision to the "
+	},
+	{
+		"id": 10,
+		"TagName": "mysql",
+		"TagDetails": "an open-source, relational database management system."
+	},
+	{
+		"id": 11,
+		"TagName": "ios",
+		"TagDetails": "Apple's operating system for mobile devices, such as the iPhone, iPod touch, iPad and Apple TV"
+	},
+	{
+		"id": 12,
+		"TagName": "CSS",
+		"TagDetails": "a language used to control the visual presentation of HTML and XML"
+	},
+	{
+		"id": 13,
+		"TagName": "asp.net",
+		"TagDetails": "a web application development framework developed by Microsoft to allow programmers to build dynamic web sites"
+	},
+	{
+		"id": 14,
+		"TagName": "sql",
+		"TagDetails": "a language for querying databases. Questions should include code examples and table structure"
+	},
+	{
+		"id": 15,
+		"TagName": "iphone",
+		"TagDetails": "specific to Apple's iPhone and/or iPod touch, but inapplicable to iPad."
+	},
+	{
+		"id": 16,
+		"TagName": ".net",
+		"TagDetails": "a software framework designed mainly for the Microsoft Windows operating system."
+	},
+	{
+		"id": 17,
+		"TagName": "objective-c",
+		"TagDetails": "should be used only on questions that are about Objective-C features or depend on code in the language."
+	},
+	{
+		"id": 18,
+		"TagName": "ruby-on-rails",
+		"TagDetails": "an open source full-stack web application framework written in Ruby. It follows the popular MVC framework model"
+	},
+	{
+		"id": 19,
+		"TagName": "c",
+		"TagDetails": "a general-purpose computer programming language used for operating systems, libraries, games"
+	},
+	{
+		"id": 20,
+		"TagName": "ruby",
+		"TagDetails": "a multi-platform open-source dynamic object-oriented interpreted language created by Yukihiro Matsumoto (Matz)"
+	},
+	{
+		"id": 21,
+		"TagName": "sql-server",
+		"TagDetails": "a relational database management system. Use this tag for all SQL Server editions including Compact"
+	},
+	{
+		"id": 22,
+		"TagName": "ajax",
+		"TagDetails": "a technique for creating seamless interactive websites via asynchronous data exchange between client and server."
+	}
+]

@@ -1,0 +1,8 @@
+<h4 class="page-header">Users</h4>
+<p ng-hide="user.list">Please Search User By Name</p>
+<div class="col-md-12">
+    <div class="well well-sm" ng-repeat="item in user.list">
+        <a href="">{{ item.FirstName }} {{ item.LastName }}</a>
+        <button class="btn btn-sm" ng-click="sendFriendRequest(item.Id, $index)">Send Friend Request</button>
+    </div>
+</div>

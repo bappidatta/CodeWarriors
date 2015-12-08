@@ -1,0 +1,48 @@
+<div class="col-md-3">
+</div>
+<div class="col-md-9">
+    <form name="postSubmitForm" ng-submit="postSubmit()" novalidate>
+        <div class="form-group">
+            <textarea name="details" class="form-control" type="text" ng-model="postModel.PostDetails" placeholder="Give you post" required></textarea>
+            <span class="span-invalid" ng-show="postSubmitForm.details.$error.required && postSubmitForm.details.$dirty">Post is required</span>
+        </div>
+
+        <input type="submit" class="btn btn-primary pull-right" value="Post" ng-disabled="!postSubmitForm.$valid" />
+    </form>
+    <p ng-hide="post.list">Sorry, There are no posts</p>
+    <h4 class="page-header">All Posts</h4>
+    <div class="post col-md-12" ng-repeat="item in post.list">
+        <div class="col-md-12 no-padding">
+            <div class="col-md-12">
+                <p>
+                    <a href="#/user/{{item.UserId}}">{{ item.FirstName }} {{ item.LastName }}</a> Says
+                    <span am-time-ago="item.CreatedTime"></span>
+                    <button ng-show="item.Email == userName" class="btn btn-sm btn-default pull-right" ng-click="removePost(item.UserId, item.Id, $index)">Remove</button>
+                    <button class="btn btn-sm btn-default pull-right" ng-click="hidePost(item.Id, $index)">Hide</button>
+
+                    <button class="btn btn-sm btn-default pull-right" ng-click="likePost(item.UserId, item.Id, $index)">Like</button>
+                </p>
+                <p><button popover="{{ likedUserList }}" popover-trigger="mouseenter" class="btn btn-default">{{ item.NoOfLike }} people like this</button></p>
+                <p>{{ item.PostDetails }}</p>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-offset-1 col-md-11 comment" ng-repeat="comment in item.Comments">
+                <div class="col-md-12">
+                    <p><a href="#/user/{{comment.UserId}}">{{ comment.FirstName }} {{ comment.LastName }}</a> Comments <span am-time-ago="comment.CreatedTime"></span></p>
+                    <p>{{ comment.CommentDetails }}</p>
+                </div>
+            </div>
+            <div class="col-md-offset-1 col-md-11 no-padding">
+                <form name="commentSubmitForm" ng-controller="CommentSubmitCtrl" ng-submit="commentSubmit(item.Id, $index)" novalidate>
+                    <div class="form-group">
+                        <textarea name="details" class="form-control" ng-model="commentModel.CommentDetails" placeholder="Comment this post" required></textarea>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary pull-right" value="Comment" ng-disabled="!commentSubmitForm.$valid" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

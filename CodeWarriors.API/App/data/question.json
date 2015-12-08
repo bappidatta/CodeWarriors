@@ -1,0 +1,28 @@
+[
+	{
+		"Id": 3,
+		"QuestionTitle": "How to create your own package for composer create-project",
+		"Details": "<p>Laravel uses:</p><pre>composer create-project laravel/laravel your-project-name --prefer-dist</pre><p>How can I make my own package so that I can use</p><pre>composer create-project mycompany/projectx your-project-name --prefer-dist</pre><p>Can I use bitbucket a private repository for this ?<br/></p>",
+		"Tags": ["ASP.net","mongodb","signalr","angular","web-api"],
+		"CreatedTime": "1401186151436",
+		"UserName": "Md. Monirul Islam",
+		"UpVote": 11,
+		"DownVote": 0,
+		"Answers": [
+			{
+				"Details": "<p>As long as the package is available on packagist.org, you can use the composer create-project command.</p><p><br/>If you don't want to put your package on packagist, please refer to composer create-project from private repo:</p><p>Like so...<br/><br/></p><pre>composer create-project vendor/name path --repository-url=http://repo.yourcomposerrepo.com</pre><p>Since you won't submit a private package to packagist. That url just needs a packages.json file at minimum, you could use satis or your own packagist if you want a more dynamic solution to the packages.json.</p><p>You can also just use git clone and then execute composer install yourself.<br/></p>",
+				"UserName": "Hasib Arnab",
+				"UpVote": 2,
+				"DownVote": 0,
+				"CreatedTime": "1401186151436"
+			},
+			{
+				"Details": "<p>They is nothing special to do for you package to be installable with composer create-project.<br/><br/>Just declare you dependencies in the composer.json of your package if you have any. The command will just copy the package into the current directory, than run composer install<br/><br/>You can use a private repository if you use authentification over ssh, for example:<br/></p><pre>{<br/>    &#34;require&#34;: {<br/>        &#34;vendor/my-private-repo&#34;: &#34;dev-master&#34;<br/>    },<br/>    &#34;repositories&#34;: [<br/>        {<br/>            &#34;type&#34;: &#34;vcs&#34;,<br/>            &#34;url&#34;:  &#34;git@bitbucket.org:vendor/my-private-repo.git&#34;<br/>        }<br/>    ]<br/>}<br/></pre><p><br/>See https://getcomposer.org/doc/05-repositories.md<br/></p>",
+				"UserName": "Bappi Datta",
+				"UpVote": 1,
+				"DownVote": 0,
+				"CreatedTime": "1401186151436"
+			}
+		]
+	}
+]

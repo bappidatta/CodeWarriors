@@ -1,0 +1,25 @@
+[
+	{
+		"PostId": 1,
+		"PostDetails": "Google indexing error in site with wordpress sitemap plugin",
+		"LinkedUserIds": ["1","2","3","4"],
+		"CreatedTime": 1401186166911,
+		"UserId": "10",
+		"UserName": "Hasib Arnab",
+		"NoOfLike": 5,
+		"Comments": [
+			{
+				"UserId": 101,
+				"Name": "Bappi",
+				"CommentsDetails": "aslkdjf;laksdjflkasjdflk;ajsdflkjasdflkja;sdlfkja;k",
+				"CreatedTime": 1401186166911,
+			},
+			{
+				"UserId": 102,
+				"Name": "Monirul",
+				"CommentsDetails": "aslkdjf;laksdjflkasjdflk;ajsdflkjasdflkja;sdlfkja;k",
+				"CreatedTime": 1401186166911,
+			}
+		] 
+	}
+]

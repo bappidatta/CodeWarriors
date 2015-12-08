@@ -1,0 +1,49 @@
+<h4>Sign up using any of the following services:</h4>
+<hr />
+
+<div class="col-md-4">
+    <a href="#" class="btn btn-default btn-block">Sign up using google</a>
+
+    <accordion>
+        <accordion-group is-open="status.isFirstOpen">
+            <accordion-heading>
+                Sign Up using Bit Book
+            </accordion-heading>
+            <div ng-controller="SignUpPostCtrl">
+                <form name="signupForm" ng-submit="signup()" novalidate>
+                    <div class="form-group">
+                        <input name="firstName" class="form-control" type="text" ng-model="userModel.FirstName" placeholder="First Name" required ng-minlength="3" />
+                        <span class="span-invalid" ng-show="signupForm.firstName.$error.required && signupForm.firstName.$dirty">First Name is required</span>
+                        <span class="span-invalid" ng-show="signupForm.firstName.$error.minlength && signupForm.firstName.$dirty">First Name must be atleast six character</span>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="lastName" class="form-control" type="text" ng-model="userModel.LastName" placeholder="Last Name" required ng-minlength="3" />
+                        <span class="span-invalid" ng-show="signupForm.lastName.$error.required && signupForm.lastName.$dirty">Last Name is required</span>
+                        <span class="span-invalid" ng-show="signupForm.lastName.$error.minlength && signupForm.lastName.$dirty">Last Name must be atleast six character</span>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" name="email" type="email" ng-model="userModel.Email" placeholder="Email" required />
+                        <span class="span-invalid" ng-show="signupForm.email.$error.required && signupForm.email.$dirty">Email is required</span>
+                        <span class="span-invalid" ng-show="!signupForm.email.$error.required && signupForm.email.$error.email && signupForm.email.$dirty">Email must be valid</span>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" name="password" type="password" ng-model="userModel.Password" placeholder="Password" required ng-minlength="6" />
+                        <span class="span-invalid" ng-show="signupForm.password.$error.required && signupForm.password.$dirty">Password is required</span>
+                        <span class="span-invalid" ng-show="signupForm.password.$error.minlength && signupForm.password.$dirty">Password must be atleast six character</span>
+                    </div>
+
+                    <div class="form-group">
+                        <input name="confirmPassword" class="form-control" type="password" placeholder="Confirm Password" ng-model="userModel.ConfirmPassword" data-match="userModel.Password" required />
+                        <span class="span-invalid" ng-show="signupForm.confirmPassword.$error.match && signupForm.confirmPassword.$dirty">Confirm Password must be match with password</span>
+                    </div>
+
+                    <input type="submit" class="btn btn-primary btn-sm" value="Sign Up" ng-disabled="!signupForm.$valid || isDisabled" />
+                </form>
+                <alert class="alert" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+            </div>
+        </accordion-group>
+    </accordion>
+</div>
